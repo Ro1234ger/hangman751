@@ -1,7 +1,5 @@
 import random
 
-fruit_name = {"apple","peach","strawberry","watermelon","grape"}
-word_list = list(fruit_name)
-word = random.choice(word_list)
-
-guess = input ("Please input a letter:")
+create_fruit_name_list = {"apple","peach","strawberry","watermelon","grape"}
+change_to_word_list = list(create_fruit_name_list)
+generate_word = random.choice(change_to_word_list)
