@@ -1,4 +1,4 @@
-from milestone_2 import generate_word  # Assuming generate_word is defined in the milestone_2 module
+from milestone_2 import generate_word  # generate_word is defined in the milestone_2 module
 
 def check_guess(guess):
     """
@@ -19,11 +19,11 @@ def ask_for_input():
         guess = input("Please input a letter:")
 
         if guess.isalpha() and len(guess) == 1:  # Step 2: Check if the input is a valid letter
-            break
+            return
         else:
             print("Invalid letter. Please, enter a single alphabetical character.")
 
-    check_guess(guess)  # Step 3: Call the check_guess function to check if the guess is in the word
+        check_guess(guess)  # Step 3: Call the check_guess function to check if the guess is in the word
 
 # Step 4: Call the ask_for_input function to test the code
 ask_for_input()
