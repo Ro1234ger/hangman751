@@ -1,7 +1,7 @@
 ## Table of Contents
 
 - [Description](#description)
-- [Usage](#usage)
+- [Features](#Features)
 - [File Structure](#file-structure)
 - [What I Learned](#What-I-Learned)
 - [Installation](#installation)
@@ -21,7 +21,6 @@ This is an implementation of the Hangman game, where the computer thinks of a wo
 ## File Structure
 
 hangman-game/
-│
 ├── hangman.py
 ├── milestone_2.py
 ├── milestone_3.py
