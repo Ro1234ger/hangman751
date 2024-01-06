@@ -42,7 +42,9 @@ class Hangman:
                     print(self.word_guessed)
 
         else:
+            self.num_lives -= 1
             print(f"Sorry, {guess} is not in the word. Try again.")
+            print(f"You have {self.num_lives} lives left.")
 
     def ask_for_input(self):
         """
@@ -50,7 +52,6 @@ class Hangman:
         """
         print(self.word_guessed)
         print(f"There are {self.num_letters} letters in the word.")
-        num_of_guesses = 0
 
         while True:
             guess = input("Please input a letter:")
@@ -71,10 +72,8 @@ class Hangman:
                     print("Congratulations! You guessed the word.", self.word)
                     # Exit the loop if the word is completely guessed
                     break
-                elif guess not in self.word:
-                    num_of_guesses += 1
-
-            if num_of_guesses == self.num_lives:
+                    
+            if self.num_lives == 0:
                 print("Game over. You ran out of lives. The word was:", self.word)
                 # Exit the loop if the player runs out of lives
                 break
