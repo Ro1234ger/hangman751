@@ -27,19 +27,20 @@ class Hangman:
         generate_word = random.choice(self.word_list)
         return generate_word
 
-    def check_guess(self,guess):
+    def check_guess(self, guess):
         """
         Check if the guessed letter is in the word.
         """
-        guess = guess.lower()  
-        # Convert the guess to lowercase
+        guess = guess.lower()  # Convert the guess to lowercase
 
-        if guess in self.word:  
-            # Check if the guess is in the word
+        if guess in self.word:  # Check if the guess is in the word
             print(f"Good guess! {guess} is in the word.")
+
             for i in range(len(self.word)):
                 if self.word[i] == guess:
                     self.word_guessed[i] = guess
+                    print(self.word_guessed)
+
         else:
             print(f"Sorry, {guess} is not in the word. Try again.")
 
@@ -47,7 +48,7 @@ class Hangman:
         """
         Ask the user for a valid input.
         """
-        print(self.list_of_guesses)
+        print(self.word_guessed)
         print(f"There are {self.num_letters} letters in the word.")
         num_of_guesses = 0
 
@@ -71,9 +72,9 @@ class Hangman:
                     # Exit the loop if the word is completely guessed
                     break
                 elif guess not in self.word:
-                    incorrect_guesses += 1
+                    num_of_guesses += 1
 
-            if incorrect_guesses == self.num_lives:
+            if num_of_guesses == self.num_lives:
                 print("Game over. You ran out of lives. The word was:", self.word)
                 # Exit the loop if the player runs out of lives
                 break
